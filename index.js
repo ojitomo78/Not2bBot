@@ -29,6 +29,7 @@ for (const file of commandFiles) {
 
 client.on('ready', () => {
     console.log(`Bot conectado como ${client.user.tag}`);
+    client.user.setPresence('2b!help', { type: CustomStateSet});//Funcion de estado(?
 });
 
 // Escuchar mensajes para comandos
