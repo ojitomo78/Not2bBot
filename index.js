@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
+const { Client, GatewayIntentBits, Collection, ActivityType } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 const express = require('express');  // Importar express para crear el servidor
@@ -29,7 +29,7 @@ for (const file of commandFiles) {
 
 client.on('ready', () => {
     console.log(`Bot conectado como ${client.user.tag}`);
-    client.user.setPresence('2b!help', { type: CustomStateSet});//Funcion de estado(?
+    client.user.setPresence('2b!help', { type: ActivityType.Custom});//Funcion de estado(?
 });
 
 // Escuchar mensajes para comandos
