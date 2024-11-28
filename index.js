@@ -2,6 +2,10 @@ require('dotenv').config();
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
+const express = require('express');  // Importar express para crear el servidor
+
+const app = express();  // Crear una aplicación express
+const port = process.env.PORT || 8080;  // Usar el puerto del entorno o 8080 como predeterminado
 
 const client = new Client({
     intents: [
@@ -27,6 +31,7 @@ client.on('ready', () => {
     console.log(`Bot conectado como ${client.user.tag}`);
 });
 
+// Escuchar mensajes para comandos
 client.on('messageCreate', async (message) => {
     if (message.author.bot || !message.content.startsWith(prefix)) return;
 
@@ -45,4 +50,15 @@ client.on('messageCreate', async (message) => {
     }
 });
 
+// Iniciar sesión en Discord con el token del entorno
 client.login(process.env.DISCORD_TOKEN);
+
+// Crear un endpoint en express para mantener el servidor activo
+app.get('/', (req, res) => {
+    res.send('Bot está activo y funcionando!');
+});
+
+// Hacer que express escuche en el puerto configurado
+app.listen(port, () => {
+    console.log(`Servidor web escuchando en el puerto ${port}`);
+});
