@@ -33,7 +33,7 @@ client.on('ready', () => {
         status: 'online', // Estados disponibles: 'online', 'idle', 'dnd', 'invisible'
         activities: [
             {
-                name: '2b!help',
+                name: '💎 2b!help',
                 type: ActivityType.Custom // Otros valores: Watching, Listening, Competing
             }
         ]
