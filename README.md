@@ -20,7 +20,7 @@ Antes de empezar, asegúrate de tener los siguientes requisitos instalados:
 
 1. Clona este repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/tuusuario/Not2bBot.git
+   git clone https://github.com/<tuusuario>/Not2bBot.git
    ```
 2. Instala las dependencias:
 
